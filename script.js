@@ -1,17 +1,19 @@
 function minDate(dates) {
-  let minDate = dates[0];
+ let minDate = dates[0];
 	for(let i=1;i<dates.length;i++){
 		let splitArray1 = minDate.split("/");
 		let splitArray2 = dates[i].split("/");
-		if(!(Number(splitArray1[0])<Number(splitArray2[0]) ||Number(splitArray1[1])<Number(splitArray2[1])
-		  ||Number(splitArray1[2])<Number(splitArray2[2]))){
-			minDate = dates[i]
-		  }
+		let yearDiff = Number(splitArray1[0])-Number(splitArray2[0]);
+        let monthDiff = Number(splitArray1[1])-Number(splitArray2[1]);
+        let dateDiff = Number(splitArray1[2])-Number(splitArray2[2]);
+        if(yearDiff>0 || monthDiff>0 || dateDiff>0){
+            minDate = dates[i]
+        }
 	}
 	return minDate;
 }
 
-// Do not change the code
+// Do not change the code 
 
 var dates = [
   "2023/03/01",
