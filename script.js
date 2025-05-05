@@ -1,5 +1,14 @@
 function minDate(dates) {
-  //write you code here
+  let minDate = dates[0];
+	for(let i=1;i<dates.length;i++){
+		let splitArray1 = minDate.split("/");
+		let splitArray2 = dates[i].split("/");
+		if(!(Number(splitArray1[0])<Number(splitArray2[0]) ||Number(splitArray1[1])<Number(splitArray2[1])
+		  ||Number(splitArray1[2])<Number(splitArray2[2]))){
+			minDate = dates[i]
+		  }
+	}
+	return minDate;
 }
 
 // Do not change the code
@@ -36,5 +45,5 @@ var dates = [
   "2023/03/29",
   "2023/03/30",
 ];
-
+//console.log(minDate(dates))
 alert(minDate(dates));
